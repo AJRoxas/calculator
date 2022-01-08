@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    font-family: 'Ubuntu Mono', sans-serif;
+    font-size: 10vmin;
+    font-weight: 700;
+    text-align: center;
+    color: #2D2D2D;
+}
+
+body {
+    min-height: 95vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D1D9CE;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    height: 95vmin;
+    width: 66vmin;
+    border: 1vmin solid #2D2D2D;
+    border-radius: 2vmin;
+    background-color: #555;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmin;
+}
+
+.calculator-screen,
+.row {
+    display: flex;
+    height: 14vmin;
+    width: 60vmin;
+}
+
+.calculator-screen {
+    box-sizing: border-box;
+    padding: 0 2vmin;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #949494;
+}
+
+.row {
+    justify-content: space-between;
+    gap: 1vmin;
+}
+
+.option-button,
+.numpad-button,
+.operation-button,
+.equals-button,
+.zero-button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14min;
+    width: 15vmin;
+    color: #ccc;
+    border-radius: 2vmin;
+    border: 0;
+}
+
+.option-button {
+    background-color: #3645BB;
+}
+
+.numpad-button {
+    background-color: #428C44;
+}
+
+.operation-button {
+    background-color: #A92430;
+}
+
+.equals-button {
+    background: #DAA34C;
+}
+
+.zero-button {
+    width: 30vmin;
+    background-color: #428C44;
+}
+
+/*  
+    Author:
+    Thiago Marques
+    June 6, 2018
+
+    W/ minor changes
+
+    https://freefrontend.com/css-button-hover-effects/
+*/
+a:hover {
+    background-image: linear-gradient(
+        to right, 
+        #E7484F,
+        #E7484F 16.65%,
+        #F68B1D 16.65%,
+        #F68B1D 33.3%,
+        #FCED00 33.3%,
+        #FCED00 49.95%,
+        #009E4F 49.95%,
+        #009E4F 66.6%,
+        #00AAC3 66.6%,
+        #00AAC3 83.25%,
+        #732982 83.25%,
+        #732982 100%,
+        #E7484F 100% 
+    );
+    animation:slidebg 2s linear infinite;
+    color: #eee;
+}
+
+/*  
+    Author:
+    Thiago Marques
+    June 6, 2018
+
+    https://freefrontend.com/css-button-hover-effects/
+*/
+@keyframes slidebg {
+    to {
+        background-position:20vw;
+    }
+}
