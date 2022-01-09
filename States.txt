@@ -1,0 +1,32 @@
+STATES
+
+action -> takes you to state
+
+STATE 1: all empty default 0, eqV1 set
+AC: clears eqOP and eqV2, sets eqV1 to 0 					-> state1
++-: if 0, do nothing else change sign 						-> state1
+%%: if 0, do nothing else change percent	 				-> state1
+OP: sets eqOP 												-> state2
+NM: sets eqV1 												-> state1
+DC: adds . && set isEqV1DecimalUsed to true 				-> state1
+EQ: returns eqV1 											-> state1
+
+
+STATE 2: eqOP set
+AC: clears eqOP and eqV2, sets eqV1 to 0 					-> state1
++-: nothing													-> state2
+%%: nothing													-> state2
+OP: replace eqOP											-> state2
+NM: sets eqV2												-> state3
+DC: nothing													-> state2
+EQ: sets eqV2 && calculate equation && set eqV1				-> state1
+
+
+STATE 3: eqV2 set
+AC: clear eqOP and eqV2, set eqV1 to 0 						-> state1
++-: if 0, do nothing else change sign 						-> state3
+%%: if 0, do nothing else change percent	 				-> state3
+OP: calculate equation && set eqV1 and eqOP					-> state2
+NM: sets eqV2 												-> state2
+DC: adds . && set isEqV2DecimalUsed to true 				-> state2
+EQ: calculate equation && set eqV1							-> state1
